@@ -1,0 +1,3 @@
+Adding an existing project to GitHub using the command line
+git commit -am "c1"
+git push -u origin master
