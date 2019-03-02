@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import '@shopify/polaris/styles.css';
-import {AppProvider, Page, Card, Button} from '@shopify/polaris';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './routes/home';
+import Config from './routes/config';
+import Help from './routes/help';
+import Products from './routes/products';
 
 class App extends Component {
   render() {
     return (
-      <AppProvider>
-      <Page title="application config">
-        <Card sectioned>
-          <Button onClick={() => alert('Button clicked! hahahahaha')}>Example button 1111</Button>
-        </Card>
-      </Page>
-    </AppProvider>
+      <Router>
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/config" component={Config} />
+          <Route exact path="/products" component={Products} />
+          <Route exact path="/help" component={Help} />
+        </div>
+      </Router>
     );
   }
 }
